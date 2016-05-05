@@ -24,6 +24,7 @@ describe('httpInterceptor', function () {
 			functionCalled = true;
 		};
 
+
 		UserService
 			.getUser()
 			.then(function () {
