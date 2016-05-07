@@ -1,15 +1,15 @@
-function myInterceptor(UserService) {
-  this.responseError = function (config) {
-    UserService
-      .showError(config);
-  };
+function httpRequestInterceptor() {
+  this.responseError = function () {
+    alert("Error!");
+  }
 }
+
 
 angular
   .module('app')
-  .service('myInterceptor', myInterceptor)
+  .service('httpRequestInterceptor', httpRequestInterceptor)
   .config(function ($httpProvider) {
-    $httpProvider.interceptors.push('myInterceptor')
+    $httpProvider.interceptors.push('httpRequestInterceptor')
   })
 
 // Make sure you run stubby -d config.yml to mock our backend.
