@@ -1,6 +1,5 @@
 function MyInterceptor() {
     this.responseError = function () {
-
             alert('Error!');
     };
 }
