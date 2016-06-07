@@ -1,9 +1,12 @@
-  function UserService($http) {
-	this.getUser = function () {
-		return $http.get('/rest/user');
-	};
+function httpRequestInterceptor() {
+	this.responseError = function () {
+		alert('Error!');
+	}
 }
 
 angular
 	.module('app')
-	.service('UserService', UserService);
+	.service('httpRequestInterceptor', httpRequestInterceptor)
+	.config(function ($httpProvider) {
+		$httpProvider.interceptors.push('httpRequestInterceptor');
+	});
