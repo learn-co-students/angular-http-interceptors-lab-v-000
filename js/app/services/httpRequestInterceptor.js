@@ -1,6 +1,6 @@
-function MyInterceptor(NotificationService) {
-    this.responseError = function (config) {
-      alert(config);
+function MyInterceptor() {
+    this.responseError = function () {
+      alert('Error!');
     };
 }
 
