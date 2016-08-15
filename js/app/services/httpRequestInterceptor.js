@@ -1,8 +1,7 @@
 function MyInterceptor() {
 
-this.responseError = function (config) {
-  alert(config);
-  return config;
+this.responseError = function () {
+  alert('Error!');
 };
 }
 
