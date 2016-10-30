@@ -1,4 +1,4 @@
-function MyInterceptor() {
+function httpRequestInterceptor() {
     this.responseError = function () {
         alert('Error');
     };
@@ -6,7 +6,7 @@ function MyInterceptor() {
 
 angular
     .module('app')
-    .service('MyInterceptor', MyInterceptor)
+    .service('httpRequestInterceptor', httpRequestInterceptor)
     .config(function ($httpProvider) {
-        $httpProvider.interceptors.push('MyInterceptor');
+        $httpProvider.interceptors.push('httpRequestInterceptor');
     });
