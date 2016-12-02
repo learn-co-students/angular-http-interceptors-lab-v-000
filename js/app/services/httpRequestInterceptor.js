@@ -1,7 +1,7 @@
 function MyInterceptor() {
     this.responseError = function (config) {
         // this will be fired before each request!
-        alert("There is an error")
+        alert("There is an error.");
     };
 }
 
